@@ -1,5 +1,3 @@
-archivo = open("./archivos/Temas.txt", "a", encoding="utf8")
-
 class Tema():
     def __init__(self, idTema, nombre):
         self.__idTema = idTema
@@ -18,3 +16,18 @@ class Tema():
         return self.__nombre
     
     def agregarInfo(self):
+        archivo = open("./archivos/Temas.txt", "a", encoding="utf8")
+
+        archivo.write(self.__idTema + "|" + self.__nombre)
+
+        archivo.close()
+
+    def eliminarInfo():
+        
+    def leerInfo():
+         archivo = open("./archivos/Temas.txt", "a", encoding="utf8")
+
+         print(archivo.read())
+
+         archivo.close()
+         
