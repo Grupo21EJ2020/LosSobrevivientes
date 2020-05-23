@@ -29,9 +29,15 @@ while finish > 7:
                 print("Se ha agregador la información correctamente")
                 print("▒" * 50)
             elif rea == 2:
-                idTema = input("Por favor, proporcione el id que desea eliminar: ")
-                nombre = ""
+                print("Estos son los temas que hay")
+                archivo = open("./archivos/Temas.txt")
+                print(archivo.read())
+                archivo.close()
+
+                idTema = input("Por favor, proporcione el id del tema que desea eliminar:\n")
+                nombre = input("Por favor, proporcione el nombre del tema que desea eliminar:\n")
                 eliminar = Tema(idTema, nombre)
+                eliminar.eliminarInfo()
                 print(f"Se ha eliminado el id {idTema}")
             elif rea == 4:
                 archivo = open("./archivos/Temas.txt")
