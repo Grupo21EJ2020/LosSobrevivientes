@@ -16,18 +16,18 @@ class Tema():
         return self.__nombre
     
     def agregarInfo(self):
-        archivo = open("./archivos/Temas.txt", "a", encoding="utf8")
+        archivo = open("./archivos/Temas.txt","a",encoding='utf8')
 
-        archivo.write(self.__idTema + "|" + self.__nombre)
+        archivo.write(self.__idTema + "|" + self.__nombre + "\n")
 
         archivo.close()
 
-    def eliminarInfo():
-        
-    def leerInfo():
-         archivo = open("./archivos/Temas.txt", "a", encoding="utf8")
-
-         print(archivo.read())
-
-         archivo.close()
-         
+    def eliminarInfo(self):
+        archivo = open("./archivos/Temas.txt", "r+")
+        for renglon in archivo:
+            datos = renglon.split("\n")
+            if datos[0] == (self.__idTema + "|" + self.__nombre):
+                archivo.write("")
+            else:
+                print("No existe este dato")
+        archivo.close()
