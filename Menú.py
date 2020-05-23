@@ -22,17 +22,20 @@ while finish > 7:
             rea = int(input(""))
             print("▒" * 50)
             if rea == 1:
-                idTema = int(input("Proporcione me el Id del tema: "))
-                nombre = input("Proporcione me el nombre del tema: ")
+                idTema = input("Proporcione me el Id del tema: ")
+                nombre = input("Proporcione me el nombre del tema: ")                
                 agregar = Tema(idTema, nombre)
+                agregar.agregarInfo()
                 print("Se ha agregador la información correctamente")
                 print("▒" * 50)
+            elif rea == 2:
+                idTema = input("Por favor, proporcione el id que desea eliminar: ")
+                nombre = ""
+                eliminar = Tema(idTema, nombre)
+                print(f"Se ha eliminado el id {idTema}")
             elif rea == 4:
-                archivo = open("./archivos/Temas.txt", "r", encoding="utf8")
-                for x in archivo:
-                    datos = x.split("|")
-                    print("idTema", datos[0])
-                    print("Nombre", datos[1])
+                archivo = open("./archivos/Temas.txt")
+                print(archivo.read())
                 archivo.close()
                 print("▒" * 50)
             elif rea == 5:
