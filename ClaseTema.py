@@ -7,10 +7,6 @@ class Tema():
     def idTema(self):
         return self.__idTema
 
-    @idTema.setter
-    def idTema(self, valor):
-        self.__idTema = valor
-
     @property
     def nombre(self):
         return self.__nombre
