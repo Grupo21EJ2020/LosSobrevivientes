@@ -38,7 +38,7 @@ while finish > 7:
                 nombre = input("Por favor, proporcione el nombre del tema que desea eliminar:\n")
                 eliminar = Tema(idTema, nombre)
                 eliminar.eliminarInfo()
-                print(f"Se ha eliminado el id {idTema}")
+                print(f"Se ha eliminado el id {idTema} con el nombre {nombre}")
             elif rea == 4:
                 archivo = open("./archivos/Temas.txt")
                 print(archivo.read())
