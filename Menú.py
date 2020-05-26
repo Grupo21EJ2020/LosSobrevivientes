@@ -1,5 +1,7 @@
 from ClaseMenuTemas import MenuTema
 from ClaseMenuVT import MenuVT
+from ClaseMenuEmpleados import MenuEmpleado
+
 
 finish = 8
 while finish > 7:
@@ -15,17 +17,8 @@ while finish > 7:
 
     
     if admin == 1:
-        opcion = 0
-        while opcion < 6 :
-            print ("¿Que accion se desea realizar?")
-            print("1.Agregar Info\n 2.Borrar Info\n 3.Modificar info\n 4.Consultar Info\n 5.Ver detalles especificos\n 6.Regresar al menu" )
-            opcion = int(input(""))
-
-            if opcion == 6:
-                print ("Regresaras al menu principal ")
-            
-
-
+        MenuEmpleado().menu  
+              
     elif admin == 3:
         MenuTema().menu()
     elif admin == 6:
