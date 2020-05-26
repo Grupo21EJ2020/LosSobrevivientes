@@ -27,14 +27,16 @@ class Empleado:
         return self.__direccion  
 
     @direccion.setter
-    def direccion (self,valor):
-        return self.__direccion = valor 
+    def direccion (self, valor):
+        self.__direccion = valor   
+
+  
 
 
     def agregarInfo(self):
         archivo = open("./archivos/Empleados.txt","a",encoding='utf8')
 
-        archivo.write(self.__idEmpleado "\n" + self.__nombre + "\n" + self.__direccion)
+        archivo.write(self.__idEmpleado + "|" + self.__nombre + "|"  + self.__direccion + "\n")
 
         archivo.close()
 
