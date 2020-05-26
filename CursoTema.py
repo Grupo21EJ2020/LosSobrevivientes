@@ -33,13 +33,7 @@ class Curso_Tema:
         print("Cual es el id que necesitas")
         id_buscar = input("> ")
 
-        for renglon in archivo:
-            for x in renglon:
-                if id_buscar != x:
-                    break
-                else:
-                    print(renglon)
-                    break
+        
 
         archivo.close()
 
@@ -56,15 +50,7 @@ class Curso_Tema:
         print("Cual el nuevo id del tema")
         idtema = input("> ")
 
-        for renglon in archivo:
-            for x in renglon:
-                if id_mod != x:
-                    archivo_temp.write(renglon)
-                    break
-                elif id_mod == x:
-                    archivo_temp.write(idcursotema + "|" + idcurso + "|" + idtema + "\n")
-                    break
-    
+        
         archivo.close()
         archivo_temp.close()
         os.remove("./archivos/cursos_temas.txt")
@@ -77,13 +63,6 @@ class Curso_Tema:
         print("Id a Borrar")
         id_borrar = input("> ")
 
-        for renglon in archivo:
-            for x in renglon:
-                if id_borrar != x:
-                    archivo_temp.write(renglon)
-                    break
-                elif id_borrar == x:
-                    break
     
         archivo.close()
         archivo_temp.close()
