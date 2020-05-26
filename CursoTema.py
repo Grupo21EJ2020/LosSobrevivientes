@@ -21,6 +21,7 @@ class Curso_Tema:
         archivo.close()
 
     def consultar_curso_tema():
+        archivo = open("./archivos/cursos_temas.txt",encoding="utf8")
 
         print(archivo.read())
 
