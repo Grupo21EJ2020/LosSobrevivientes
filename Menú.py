@@ -17,7 +17,7 @@ while finish > 7:
 
     
     if admin == 1:
-        MenuEmpleado().menu  
+        MenuEmpleado().menu()
               
     elif admin == 3:
         MenuTema().menu()
