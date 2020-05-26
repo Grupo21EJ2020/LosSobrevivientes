@@ -36,13 +36,30 @@ while finish > 7:
 
                 idTema = input("Por favor, proporcione el id del tema que desea eliminar:\n")
                 nombre = input("Por favor, proporcione el nombre del tema que desea eliminar:\n")
+                
                 eliminar = Tema(idTema, nombre)
                 eliminar.eliminarInfo()
+                
                 print(f"Se ha eliminado el id {idTema} con el nombre {nombre}")
+                print("▒" * 50)
+            elif rea == 3:
+                print("Estos son los temas que hay")
+                archivo = open("./archivos/Temas.txt")
+                print(archivo.read())
+                archivo.close()                
+                
+                idTema = input("¿Cúal id desea modificar?\n ")
+                nombre = input("¿Cómo desea renombrarlo?\n ")
+
+                modi = Tema(idTema, nombre)
+                modi.cambiarInfo()
+                
+                print("▒" * 50)
             elif rea == 4:
                 archivo = open("./archivos/Temas.txt")
                 print(archivo.read())
                 archivo.close()
+                
                 print("▒" * 50)
             elif rea == 5:
                 ciclo = 5
