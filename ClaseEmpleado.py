@@ -31,8 +31,7 @@ class Empleado:
         self.__direccion = valor   
 
   
-
-
+  
     def agregarInfo(self):
         archivo = open("./archivos/Empleados.txt","a",encoding='utf8')
 
