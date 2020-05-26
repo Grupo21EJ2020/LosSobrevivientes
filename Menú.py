@@ -1,4 +1,5 @@
 from ClaseMenuTemas import MenuTema
+from ClaseMenuVT import MenuVT
 
 finish = 8
 while finish > 7:
@@ -27,6 +28,7 @@ while finish > 7:
 
     elif admin == 3:
         MenuTema().menu()
-
+    elif admin == 6:
+        MenuVT().menu()
     elif admin == 7:
         finish = 7
