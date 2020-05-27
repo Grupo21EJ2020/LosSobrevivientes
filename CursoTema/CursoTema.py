@@ -36,11 +36,15 @@ class Curso_Tema:
         print("Cual es el id que necesitas")
         self.id_buscar = input("> ")
 
+<<<<<<< HEAD:CursoTema.py
         for renglon in self.archivo:
             id = renglon.split("|")[0]
             if self.id_buscar == id:
                     print(renglon)
                     break
+=======
+        
+>>>>>>> ae5c38f82d57aa6460b120ecbe9b1dd01ba5a1e8:CursoTema/CursoTema.py
 
         self.archivo.close()
 
@@ -58,6 +62,7 @@ class Curso_Tema:
         print("Cual el nuevo id del tema")
         self.idtema = input("> ")
 
+<<<<<<< HEAD:CursoTema.py
         for renglon in self.archivo:
             id = renglon.split("|")[0]
             if self.id_mod != id:
@@ -68,6 +73,11 @@ class Curso_Tema:
     
         self.archivo.close()
         self.archivo_temp.close()
+=======
+        
+        archivo.close()
+        archivo_temp.close()
+>>>>>>> ae5c38f82d57aa6460b120ecbe9b1dd01ba5a1e8:CursoTema/CursoTema.py
         os.remove("./archivos/cursos_temas.txt")
         os.rename("./archivos/cursos_temas_temp.txt","./archivos/cursos_temas.txt")
 
@@ -76,6 +86,7 @@ class Curso_Tema:
         self.archivo = open("./archivos/cursos_temas.txt","r",encoding="utf8")
         self.archivo_temp = open("./archivos/cursos_temas_temp.txt","w",encoding="utf8")
 
+<<<<<<< HEAD:CursoTema.py
         print("Id a eliminar")
         self.id_borrar = input("> ")
 
@@ -83,11 +94,16 @@ class Curso_Tema:
            id = renglon.split("|")[0]
            if self.id_borrar != id:
                 self.archivo_temp.writen(renglon)
+=======
+>>>>>>> ae5c38f82d57aa6460b120ecbe9b1dd01ba5a1e8:CursoTema/CursoTema.py
     
         self.archivo.close()
         self.archivo_temp.close()
         os.remove("./archivos/cursos_temas.txt")
         os.rename("./archivos/cursos_temas_temp.txt","./archivos/cursos_temas.txt")
+<<<<<<< HEAD:CursoTema.py
 
         I = Curso_Tema(0,0,0)
         I.eliminar_curso_tema()
+=======
+>>>>>>> ae5c38f82d57aa6460b120ecbe9b1dd01ba5a1e8:CursoTema/CursoTema.py

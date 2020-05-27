@@ -1,4 +1,7 @@
-from ClaseTema import Tema
+from Temas.ClaseMenuTemas import MenuTema
+from Videos_Temas.ClaseMenuVT import MenuVT
+from Empleado.ClaseMenuEmpleados import MenuEmpleado
+
 
 finish = 8
 while finish > 7:
@@ -12,40 +15,13 @@ while finish > 7:
     admin = int(input(""))
     print("▒" * 50)
 
-    #if admin == 1:
-
-    if admin == 3:
-        ciclo = 6
-        while ciclo > 5:
-            print("¿Que desea realizar?")
-            print("1.- Agregar\n2.- Eliminar\n3.- Modificar\n4.- Mostrar\n5.- Regresar al Menú")
-            rea = int(input(""))
-            print("▒" * 50)
-            if rea == 1:
-                idTema = input("Proporcione me el Id del tema: ")
-                nombre = input("Proporcione me el nombre del tema: ")                
-                agregar = Tema(idTema, nombre)
-                agregar.agregarInfo()
-                print("Se ha agregador la información correctamente")
-                print("▒" * 50)
-            elif rea == 2:
-                print("Estos son los temas que hay")
-                archivo = open("./archivos/Temas.txt")
-                print(archivo.read())
-                archivo.close()
-
-                idTema = input("Por favor, proporcione el id del tema que desea eliminar:\n")
-                nombre = input("Por favor, proporcione el nombre del tema que desea eliminar:\n")
-                eliminar = Tema(idTema, nombre)
-                eliminar.eliminarInfo()
-                print(f"Se ha eliminado el id {idTema} con el nombre {nombre}")
-            elif rea == 4:
-                archivo = open("./archivos/Temas.txt")
-                print(archivo.read())
-                archivo.close()
-                print("▒" * 50)
-            elif rea == 5:
-                ciclo = 5
-
+    
+    if admin == 1:
+        MenuEmpleado().menu()
+              
+    elif admin == 3:
+        MenuTema().menu()
+    elif admin == 6:
+        MenuVT().menu()
     elif admin == 7:
         finish = 7
