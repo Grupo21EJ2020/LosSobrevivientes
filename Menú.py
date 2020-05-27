@@ -1,6 +1,6 @@
-from ClaseMenuTemas import MenuTema
-from ClaseMenuVT import MenuVT
-from ClaseMenuEmpleados import MenuEmpleado
+from Temas.ClaseMenuTemas import MenuTema
+from Videos_Temas.ClaseMenuVT import MenuVT
+from Empleado.ClaseMenuEmpleados import MenuEmpleado
 
 
 finish = 8
