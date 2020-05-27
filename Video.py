@@ -47,9 +47,23 @@ class Video:
 
         archivo.close()
 
-    def Agregar_video(self):
+    def Agregarvideo(self):
         archivo = open("./archivos/Videos.txt", encoding="utf8")
 
-        archivo.write(self.__idVideo + "|" + self.__nombre + "|" + self.__url + "|" + self.__fechapublicacion)
+        archivo.write(self.__idVideo + "|" + self.__nombre + "|" + self.__url + "|" + self.__fechapublicacion + "\n")
 
+        archivo.close()
+    
+    def Eliminarvideo(self):
+        archivo = open("./archivos/Videos.txt", "r", encoding="utf8")
+        listdelete = []
+        for linea in archivo:
+            info = linea.split("\n")
+             if info[0] != (self.__idVideo + "|" + self.__nombre + "|" + self.__url + "|" + self.__fechapublicacion):
+                listdelete.append(info[0])
+                archivo2 = open("./archivos/Videos.txt", "w", encoding = "utf8")
+                for a in listdelete:
+                    archivo2.write(a + "\n")
+                archivo2.close()
+        listdelete.remove()
         archivo.close()
