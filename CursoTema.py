@@ -1,91 +1,93 @@
 import os
 
+
 class Curso_Tema:
     def __init__(self,idCursoTema,idCurso,idTema):
         self.idCursoTema = idCursoTema
         self.idCurso = idCurso
         self.idTema = idTema
-    
-    def agregar_curso_tema():
-        archivo = open("./archivos/cursos_temas.txt","a",encoding="utf8")
+
+
+    def añadir_curso_tema(self):
+        self.archivo = open("./archivos/cursos_temas.txt","a",encoding="utf8")
         
         print("Cual es el id del curso")
-        idcursotema = input("> ")
+        self.idcursotema = input("> ")
         print("Cual es el id del curso")
-        idcurso = input("> ")
+        self.idcurso = input("> ")
         print("Cual es el id del curso")
-        idtema = input("> ")
+        self.idtema = input("> ")
 
-        archivo.write(idcursotema + "|" + idcurso + "|" + idtema)
+        self.archivo.write(self.idcursotema + "|" + self.idcurso + "|" + self.idtema + "\n")
         
-        archivo.close()
+        self.archivo.close()
 
-    def consultar_curso_tema():
-        archivo = open("./archivos/cursos_temas.txt",encoding="utf8")
+    def buscar_curso_tema(self):
+        self.archivo = open("./archivos/cursos_temas.txt",encoding="utf8")
 
-        print(archivo.read())
+        print(self.archivo.read())
 
-        archivo.close()
+        self.archivo.close()
 
-    def detalles_curso_tema():
-        archivo = open("./archivos/cursos_temas.txt",encoding="utf8")
+
+    def detalles_curso_tema(self):
+        self.archivo = open("./archivos/cursos_temas.txt",encoding="utf8")
 
         print("Cual es el id que necesitas")
-        id_buscar = input("> ")
+        self.id_buscar = input("> ")
 
-        for renglon in archivo:
-            for x in renglon:
-                if id_buscar != x:
-                    break
-                else:
+        for renglon in self.archivo:
+            id = renglon.split("|")[0]
+            if self.id_buscar == id:
                     print(renglon)
                     break
 
-        archivo.close()
+        self.archivo.close()
 
-    def modificar_cursos_temas():
-        archivo = open("./archivos/cursos_temas.txt","r",encoding="utf8")
-        archivo_temp = open("./archivos/cursos_temas_temp.txt","w",encoding="utf8")
+
+    def modificar_cursos_temas(self):
+        self.archivo = open("./archivos/cursos_temas.txt","r",encoding="utf8")
+        self.archivo_temp = open("./archivos/cursos_temas_temp.txt","w",encoding="utf8")
 
         print("Cual es el id que quieres modificar")
-        id_mod = input("> ")
+        self.id_mod = input("> ")
         print("Cual es el  nuevo id del tema del curso")
-        idcursotema = input("> ")
+        self.idcursotema = input("> ")
         print("Cual es el nuevo id del curso")
-        idcurso = input("> ")
+        self.idcurso = input("> ")
         print("Cual el nuevo id del tema")
-        idtema = input("> ")
+        self.idtema = input("> ")
 
-        for renglon in archivo:
-            for x in renglon:
-                if id_mod != x:
-                    archivo_temp.write(renglon)
-                    break
-                elif id_mod == x:
-                    archivo_temp.write(idcursotema + "|" + idcurso + "|" + idtema + "\n")
-                    break
+        for renglon in self.archivo:
+            id = renglon.split("|")[0]
+            if self.id_mod != id:
+                self.archivo_temp.write(renglon)
+            elif self.id_mod == id:
+                 self.archivo_temp.write(self.idcursotema + "|" + self.idcurso + "|" + self.idtema + "\n")
+                   
     
-        archivo.close()
-        archivo_temp.close()
+        self.archivo.close()
+        self.archivo_temp.close()
         os.remove("./archivos/cursos_temas.txt")
         os.rename("./archivos/cursos_temas_temp.txt","./archivos/cursos_temas.txt")
 
-    def borrar_curso_tema():
-        archivo = open("./archivos/cursos_temas.txt","r",encoding="utf8")
-        archivo_temp = open("./archivos/cursos_temas_temp.txt","w",encoding="utf8")
 
-        print("Id a Borrar")
-        id_borrar = input("> ")
+    def eliminar_curso_tema(self):
+        self.archivo = open("./archivos/cursos_temas.txt","r",encoding="utf8")
+        self.archivo_temp = open("./archivos/cursos_temas_temp.txt","w",encoding="utf8")
 
-        for renglon in archivo:
-            for x in renglon:
-                if id_borrar != x:
-                    archivo_temp.write(renglon)
-                    break
-                elif id_borrar == x:
-                    break
+        print("Id a eliminar")
+        self.id_borrar = input("> ")
+
+        for renglon in self.archivo:
+           id = renglon.split("|")[0]
+           if self.id_borrar != id:
+                self.archivo_temp.writen(renglon)
     
-        archivo.close()
-        archivo_temp.close()
+        self.archivo.close()
+        self.archivo_temp.close()
         os.remove("./archivos/cursos_temas.txt")
         os.rename("./archivos/cursos_temas_temp.txt","./archivos/cursos_temas.txt")
+
+        I = Curso_Tema(0,0,0)
+        I.eliminar_curso_tema()
