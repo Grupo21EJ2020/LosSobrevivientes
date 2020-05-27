@@ -1,4 +1,4 @@
-from ClaseEmpleado import Empleado
+from Empleado.ClaseEmpleado import Empleado
 
 class MenuEmpleado():
 
