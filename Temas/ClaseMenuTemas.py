@@ -1,4 +1,4 @@
-from ClaseTema import Tema
+from Temas.ClaseTema import Tema
 
 class MenuTema():
 

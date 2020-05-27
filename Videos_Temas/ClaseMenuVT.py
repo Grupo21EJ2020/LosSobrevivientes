@@ -1,4 +1,4 @@
-from ClaseViedosTema import VideoTema
+from Videos_Temas.ClaseViedosTema import VideoTema
 
 class MenuVT():
 
