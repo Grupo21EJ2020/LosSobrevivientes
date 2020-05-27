@@ -59,11 +59,35 @@ class Video:
         listdelete = []
         for linea in archivo:
             info = linea.split("\n")
-             if info[0] != (self.__idVideo + "|" + self.__nombre + "|" + self.__url + "|" + self.__fechapublicacion):
+            if info[0] != (self.__idVideo + "|" + self.__nombre + "|" + self.__url + "|" + self.__fechapublicacion):
                 listdelete.append(info[0])
                 archivo2 = open("./archivos/Videos.txt", "w", encoding = "utf8")
                 for a in listdelete:
                     archivo2.write(a + "\n")
                 archivo2.close()
         listdelete.remove()
+        archivo.close()
+    
+    def modificarInfo (self):
+        archivo = open("./archivos/Videos.txt", "r",encoding="utf8")
+        listacam = []
+        listacam2 = []
+        guardar = archivo.readlines()
+        for guard in guardar:
+            guard = guard.replace("\n", "")
+            listacam.append(guard)
+        for linea in listacam:
+            info = linea.split("|")
+            if info[0] == (self.__idEmpleado,):
+                infoNueva = info[1].replace(info[1], self.__idVideo + "|" + self.__nombre + "|" + self.__url + "|" + self.__fechapublicacion + "\n")
+                infoCambiada = (info[0] + "|" + infoNueva)
+                listacam2.append(infoCambiada)
+            else:
+                info = (linea + "\n")
+                listacam2.append(info)
+        archivos2 = open("./archivos/Videos.txt", "w", encoding = "utf8")                
+        for a in listacam2:
+            cambios = a
+            archivos2.write(cambios)       
+        archivos2.close()
         archivo.close()
