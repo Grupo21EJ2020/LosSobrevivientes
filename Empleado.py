@@ -28,5 +28,5 @@ class Empleado:
 
     @direccion.setter
     def direccion (self, valor):
-        return self.__direccion = valor 
+        return self.__direccion =valor 
            
