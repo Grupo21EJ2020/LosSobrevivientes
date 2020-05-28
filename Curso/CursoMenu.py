@@ -1,4 +1,4 @@
-from Curso.CursoMenu import CursoMenu
+from Curso import Curso
 
 class CursoMenu():
     def menu(self):
