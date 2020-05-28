@@ -2,7 +2,7 @@
 from Temas.ClaseMenuTemas import MenuTema
 from Videos_Temas.ClaseMenuVT import MenuVT
 from Empleado.ClaseMenuEmpleados import MenuEmpleado
-from Cursos.CursoMenu import CursoMenu
+from Curso.CursoMenu import CursoMenu
 
 
 
@@ -17,7 +17,8 @@ while finish > 7:
         )
     admin = int(input(""))
     print("▒" * 50)
-
+    
+    
     elif admin == 2:
         CursoMenu().menu()
     elif admin == 3:
