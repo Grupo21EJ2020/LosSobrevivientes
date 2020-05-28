@@ -17,6 +17,7 @@ while finish > 7:
         )
     admin = int(input(""))
     print("▒" * 50)
+
     if admin == 1:
         MenuEmpleado().menu()
     elif admin == 2:
