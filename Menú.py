@@ -1,5 +1,7 @@
 from ClaseMenuTemas import MenuTema
 from ClaseMenuVT import MenuVT
+from CursoMenu import CursoMenu
+
 
 finish = 8
 while finish > 7:
@@ -23,9 +25,10 @@ while finish > 7:
 
             if opcion == 6:
                 print ("Regresaras al menu principal ")
-            
 
 
+    elif admin ==2:
+        CursoMenu().menu
     elif admin == 3:
         MenuTema().menu()
     elif admin == 6:
